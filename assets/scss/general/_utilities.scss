@@ -1,0 +1,259 @@
+//
+// Utilities
+//
+// What you will find here:
+// 01. General-use classes & Accessibility
+// 02. Mixins
+//	-- Style mixins
+//	-- Responsive mixins
+//	-- Gradients
+// 03. Functions
+// 04. Keyframes
+
+// ---------------- 01. General-use classes & Accessibility
+
+.assistive-text,
+.visuallyhidden,
+.screen-reader-text {
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
+}
+
+.cover-button {
+	display: flex;
+	flex-direction: column;
+	.wp-block-cover__inner-container {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+
+		h2 {
+			flex: 1;
+			height: 100%;
+			width: 100%;
+			margin: 0;
+			display: flex;
+
+			a {
+				flex: 1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border:1px solid transparent;
+
+				&:hover,
+				&:focus,
+				&:target {
+					background: rgba( 0, 0, 0, 0.4 );
+					border: 1px solid #fff;
+				}
+			}
+		}
+	}
+}
+
+// ---------------- 02. Mixins
+// Style mixins
+
+// Responsive mixins
+///////////////////////////////////////////////////////////////////  Responsive mixins
+// using breakpoint, but helping readability
+
+@mixin phone-only {
+	@media (max-width: #{$breakpoint-small}) {
+		@content;
+	}
+}
+
+@mixin tablet-only {
+	@media (min-width: #{$breakpoint-small}) and (max-width: #{$breakpoint-large}) {
+		@content;
+	}
+}
+
+@mixin tablet-portrait {
+	@media (min-width: #{$breakpoint-small}) and (max-width: #{$breakpoint-medium}) and (orientation: portrait) {
+		@content;
+	}
+}
+
+@mixin tablet-landscape {
+	@media (min-width: #{$breakpoint-medium}) and (max-width: #{$breakpoint-large}) and (orientation: landscape) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$breakpoint-large}) {
+		@content;
+	}
+}
+
+@mixin large-desktop {
+	@media (min-width: #{$breakpoint-x-large}) {
+		@content;
+	}
+}
+
+@mixin tablet-down {
+	@media (max-width: #{$breakpoint-medium}) {
+		@content;
+	}
+}
+
+@mixin tablet-up {
+	@media (min-width: #{$breakpoint-medium}) {
+		@content;
+	}
+}
+
+@mixin phone-up {
+	@media (min-width: #{$breakpoint-small}) {
+		@content;
+	}
+}
+
+@mixin phone-landscape {
+	@media (min-width: #{$breakpoint-small}) and (max-width: #{$breakpoint-medium}) and (orientation: landscape) {
+		@content;
+	}
+}
+
+@mixin portrait {
+	@media ( orientation: portrait ) {
+		@content;
+	}
+
+}
+
+
+// Gradients
+
+// brand gradients
+
+@mixin blue-gradient {
+	background: $PK_navy;
+	background: linear-gradient(
+					to bottom,
+					$PK_navy 0%,
+					$PK_blue 75%,
+					$PK_cyan 110%
+	);
+}
+
+@mixin dark_blue-gradient {
+	background: $PK_navy;
+	background: linear-gradient(
+					to bottom,
+					$PK_navy 0%,
+					$PK_blue 80%
+	);
+}
+
+@mixin atmospheric-gradient {
+	background-image: conic-gradient(
+					from 180deg at 50% 100%,
+					transparent 0,
+					transparent 27%,
+					$PK_navy 27%,
+					$PK_blue 36.04%,
+					$PK_cyan 58.23%,
+					$PK_frost 63%,
+					$PK_tech_purple 73%,
+					transparent 73%,
+					transparent 100%
+	);
+
+}
+
+
+// from https://webgradients.com
+
+@mixin plum-gradient {
+	background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+@mixin grey-purple-gradient {
+	background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
+}
+
+@mixin dark-aqua-gradient {
+	background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+}
+
+@mixin dark-blue-gradient {
+	background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+}
+
+@mixin medium-blue-gradient {
+	background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+}
+
+@mixin light-blue-gradient {
+	background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+
+@mixin green-gradient {
+	background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+
+@mixin orange-gradient {
+	background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+}
+
+@mixin sunset-gradient {
+	background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+}
+
+@mixin light-grey-gradient {
+	background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+
+// box shadows
+
+@mixin large_shadow {
+	box-shadow:
+			rgba(17, 17, 26, 0.21) 0 4px 16px,
+			rgba(17, 17, 26, 0.31) 0 8px 24px;
+}
+@mixin dark_shadow {
+	box-shadow:
+			rgba(0, 0, 0, 0.07) 0 1px 2px,
+			rgba(0, 0, 0, 0.07) 0 2px 4px,
+			rgba(0, 0, 0, 0.07) 0 4px 8px,
+			rgba(0, 0, 0, 0.07) 0 8px 16px,
+			rgba(0, 0, 0, 0.07) 0 16px 32px,
+			rgba(0, 0, 0, 0.07) 0 32px 64px;
+}
+
+@mixin small_shadow {
+	box-shadow:
+			rgba(0, 0, 0, 0.95) 0 2px 5px -1px,
+			rgba(0, 0, 0, 0.73) 0 1px 3px -1px;
+}
+
+// ---------------- 03. Functions
+
+@function hexToRGB($hex) {
+	@return red($hex), green($hex), blue($hex);
+}
+
+// ---------------- 04. Keyframes
+
+
+@keyframes hueRotate {
+	0% {
+		filter: hue-rotate(0) blur(30px)
+	}
+
+	100% {
+		filter: hue-rotate(360deg) blur(30px)
+	}
+}
+

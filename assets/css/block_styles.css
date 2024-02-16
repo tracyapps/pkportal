@@ -1,0 +1,49 @@
+@import "https://pro.fontawesome.com/releases/v5.8.1/css/all.css";
+.assistive-text,
+.visuallyhidden,
+.screen-reader-text {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.cover-button {
+  display: flex;
+  flex-direction: column;
+}
+.cover-button .wp-block-cover__inner-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cover-button .wp-block-cover__inner-container h2 {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+}
+.cover-button .wp-block-cover__inner-container h2 a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+}
+.cover-button .wp-block-cover__inner-container h2 a:hover, .cover-button .wp-block-cover__inner-container h2 a:focus, .cover-button .wp-block-cover__inner-container h2 a:target {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #fff;
+}
+
+@keyframes hueRotate {
+  0% {
+    filter: hue-rotate(0) blur(30px);
+  }
+  100% {
+    filter: hue-rotate(360deg) blur(30px);
+  }
+}

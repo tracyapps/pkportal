@@ -1,0 +1,293 @@
+//
+// Base
+//
+// What you will find here:
+// 01. General HTML element styles
+// 02. Global styles
+// 03. Typography
+
+
+// ---------------- 01. General HTML element styles
+
+html {
+	font-size: 62.5%;
+}
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-size: $basefont_size;
+	margin: 0;
+	font-family: "Montserrat";
+	-webkit-tap-highlight-color: rgba(54, 207, 255, 0.3);
+	background-color: $background;
+	background-image: $background_gradient;
+	color: $text_color;
+	font-weight: 300;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+
+	@include phone-only {
+//		font-size: calc( var(--typography-body_text) * .9 );
+		line-height: 1.2;
+	}
+
+	&:after {
+		content: "";
+		position: fixed;
+		left: -20%;
+		right: -20%;
+		bottom: -195px;
+		height: 175px;
+		filter: blur(60px);
+		-webkit-filter: blur(60px);
+		@include atmospheric-gradient;
+		opacity: 0.5;
+	}
+
+}
+.highlight,
+::selection {
+	background: lighten( #47d3ff, 15 );
+	color: #000;
+}
+
+@if $sticky-footer {
+	div.site-content {
+		flex: 1;
+	}
+}
+
+a {
+	color: $PK_frost;
+	text-decoration: none;
+	//text-decoration-color: rgba( $PK_blue, 0.6 );
+	transition: all $button-transition-speed ease-in-out;
+	font-weight: 400;
+	position: relative;
+	display: inline-block;
+	padding: 1px 3px;
+	//text-wrap: balance;
+
+	&:after {
+		display: block;
+		content: '';
+		z-index: -1;
+		width: 100%;
+		position: absolute;
+		bottom: -3px;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: rgba( $PK_purple, 0.24 );
+		transition: all 380ms ease-in-out;
+		transition-delay: 80ms;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $PK_gray;
+	//	text-decoration: none;
+
+		&:after {
+			background: rgba( $PK_purple, 0.64 );
+			height: .5em;
+		}
+	}
+}
+
+blockquote {
+	position: relative;
+	padding: 1rem;
+
+	&:before{
+		content: "\201C";
+
+		font-family: Georgia, serif;
+		font-size: 90px;
+		font-weight: bold;
+		opacity: 0.2;
+
+		position: absolute;
+		left: -1.5rem;
+		top: -1.5rem;
+	}
+
+}
+
+// ---------------- 02. Global styles
+
+.hide-this {
+	visibility: hidden;
+	height: 0;
+	width: 0;
+	position: absolute;
+
+	svg {
+		display: none;
+	}
+}
+
+
+
+.wp-block-button__link,
+.button,
+a.button,
+input[type="submit"],
+button,
+a.wp-block-button__link {
+
+	transition: all $button-transition-speed ease-in-out;
+	background: var(--button--background_color);
+	color: var(--button--text_color);
+
+	&:hover,
+	&:focus,
+	&:visited:hover {
+		background: var(--button_hover--background_color);
+		color: var(--button_hover--text_color);
+	}
+
+
+
+	&.full {
+		display: block;
+		text-align: center;
+	}
+
+
+	&.text_link {
+		background: none;
+		color: var(--body--link_color);
+
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: var(--body--link_color_hover);
+		}
+	}
+
+	.is-style-outline & {
+		border-color: var(--button--background_color);
+		color: var(--button--background_color);
+
+		&:hover,
+		&:focus,
+		&:visited:hover {
+			border-color: var(--button_hover--background_color);
+			color: var(--button_hover--background_color);
+		}
+	}
+}
+
+
+
+.padding {
+	padding: 4rem;
+}
+
+.centered-text {
+	text-align: center;
+}
+
+
+
+
+
+// ---------------- 03. Typography
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 0.3em;
+	line-height: 1.1;
+	font-family: var(--typography-header_text);
+	padding-left: 2rem;
+	padding-right: 2rem;
+	max-width: $max-text-line-width;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+p {
+	padding-left: 2rem;
+	padding-right: 2rem;
+	max-width: $max-text-line-width;
+	margin-left: auto;
+	margin-right: auto;
+}
+blockquote{
+	max-width: $max-text-line-width;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page-content ul,
+.page-content ol {
+	max-width: $max-text-line-width;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1 {
+	font-size: var(--typography-h1_size);
+	line-height: 1;
+
+	@include phone-only {
+		font-size: calc( var(--typography-h1_size) * .8 );
+	}
+}
+
+h2 {
+	font-size: var(--typography-h2_size);
+
+	@include phone-only {
+		font-size: calc( var(--typography-h2_size) * .8 );
+	}
+}
+
+h3 {
+	font-size: var(--typography-h3_size);
+
+	@include phone-only {
+		font-size: calc( var(--typography-h3_size) * .8 );
+	}
+}
+
+h4 {
+	font-size: var(--typography-h4_size);
+
+	@include phone-only {
+		font-size: calc( var(--typography-h4_size) * .8 );
+	}
+}
+
+h5 {
+	font-size: var(--typography-h5_size);
+
+	@include phone-only {
+		font-size: calc( var(--typography-h5_size) * .8 );
+	}
+}
+
+h6 {
+	font-size: var(--typography-h6_size);
+
+	@include phone-only {
+		font-size: calc( var(--typography-h6_size) * .8 );
+	}
+}
+
+
+
+
+
+
+// ---------------- 04. SVG backgrounds / patterns

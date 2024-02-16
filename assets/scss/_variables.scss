@@ -1,0 +1,82 @@
+//
+// Global Variables
+//
+//
+// 01. Colors
+// 02. Grid & Layout
+// 02. Breakpoints
+// 03. Decorative & Animation
+
+// ----------------- 01. Colors
+
+// Primary
+$PK_cyan: #09bcef;
+$PK_blue: #1152be;
+$PK_navy: #1e3074;
+
+// Secondary
+$PK_purple: #5c5ba7;
+$PK_coral: #f95557;
+$PK_frost: #0fe4a2;
+
+$PK_silicone: #47494c;
+$PK_slate: #4c5c68;
+
+// Neutrals & Shades
+$PK_silver: #c5c2c5;
+$PK_gray: #f3f4f5;
+$PK_deep_purple: #25275c;
+$PK_tech_purple: #273074;
+
+$black: #000;
+$white: #fff;
+
+
+
+// theme
+
+$background: darken( $PK_silicone, 20 );
+$background_gradient: linear-gradient( to bottom, darken( $PK_silicone, 14 ) 0%, darken( $PK_silicone, 18 ) 90% );
+$text_color: $white;
+
+
+// ---------------- 02. Grid & Layout
+
+$gutter_width:   30px;   // used in sections
+$sticky_footer:  true;   // change to "false" to remove and footer will just follow the content size.
+$golden_large:	63.8%;
+$max_text_line_width: 90ch;
+$contained_width: 950px;
+$basefont_size: 20px;
+
+
+// ---------------- 03. Breakpoints
+// (concept borrowed from http://tapps.us/breakpoint-article )
+
+// Define breakpoints
+$breakpoint-small: 600px;
+$breakpoint-medium: 900px;
+$breakpoint-large: 1200px;
+$breakpoint-x-large: 1800px;
+
+// Breakpoint groupings by devices (used by the mixins in _utilities)
+$phone:                max-width $breakpoint-small;
+$phone-landscape:      ($breakpoint-small $breakpoint-medium) (orientation landscape);
+$tablet:               $breakpoint-small $breakpoint-large;
+$tablet-landscape:     ($breakpoint-medium $breakpoint-large) (orientation landscape);
+$tablet-portrait:      ($breakpoint-small $breakpoint-medium) (orientation portrait);
+$desktop:              $breakpoint-large;
+$large-desktop:        $breakpoint-x-large;
+
+$tablet-portrait-down: max-width $breakpoint-medium;
+$tablet-landscape-up:  $breakpoint-medium;
+
+
+// ---------------- 04. Decorative & Animation
+
+$border_radius: 			5px;
+$transition_speed:			250ms;
+$button-transition-speed: 	200ms;
+$default-button-padding:	1.25rem 4rem;
+
+$slide_ease:		cubic-bezier(.4,-0.3,.6,1.3);

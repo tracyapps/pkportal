@@ -1,0 +1,138 @@
+/**
+ * base form styles
+ */
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+input[type="month"],
+input[type="week"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input:not([type=file]),
+select,
+textarea {
+	padding: 0.5em 0.75em;
+	box-shadow: none;
+	-webkit-appearance: none;
+	background-color: $background;
+	color: $text_color;
+	border: 2px solid transparent;
+	transition: all $transition_speed ease-in-out;
+
+
+	&:hover {
+		border: 2px solid  $PK_frost;
+	}
+
+	.with_frm_style &,
+	.frm_style_formidable-style.with_frm_style &,
+	.frm_style_formidable-style.with_frm_style .form-field &,
+	.frm_style_formidable-style.with_frm_style .frm_focus_field &,
+	.frm_form_fields_active_style & {
+		font-size: 16px;
+		background-color: $background;
+		color: $text_color;
+		padding: 0.5em 0.75em;
+		box-shadow: none;
+		-webkit-appearance: none;
+		border-radius: $border_radius;
+		@include small_shadow;
+		border: 2px solid transparent;
+
+		&:hover {
+			border: 2px solid  rgba( $PK_frost, 0.5 );
+		}
+
+		&:focus {
+			border: 2px solid $PK_frost;
+			@include dark_shadow;
+			background-color: $background;
+			color: $text_color;
+		}
+	}
+
+}
+
+fieldset {
+	border: none;
+	padding: 1rem 0;
+	margin-bottom: 3rem;
+}
+.frm_forms.frm_style_formidable-style.with_frm_style,
+.frm_forms {
+	width: 90vw;
+	max-width: $contained_width;
+	margin: 1em auto;
+}
+.frm_description {
+	font-size: 80%;
+	opacity: 0.8;
+	margin-bottom: 2rem;
+}
+.frm_form_field.form-field {
+	margin-bottom: 2.5rem;
+
+	input,
+	textarea {
+		display: block;
+		width: 100%;
+	}
+
+	input[type="radio"],
+	input[type="checkbox"]{
+		width: auto;
+		display: inline-block;
+	}
+}
+
+.frm_error,
+.frm_required {
+	color: var(--form_error_text);
+	font-weight: bold;
+}
+textarea[aria-invalid="true"],
+input[aria-invalid="true"] {
+	border: 1px solid var(--form_error_text);
+}
+
+.frm_dropzone,
+.with_frm_style .frm_dropzone {
+	background: $background;
+	background-image: $background_gradient;
+
+	.dz-message {
+		background: rgba( $black, 0.1 );
+		transition: all $transition_speed ease-in-out;
+
+		&:hover {
+			border-color: $PK_frost;
+			background: rgba( $black, 0.2 );
+		}
+	}
+}
+
+// fixing some formidble pro stuff that they sneak in even when styles are off
+.frm_form_field.frm_left_container input:not([type=radio]):not([type=checkbox]), .frm_form_field.frm_left_container:not(.frm_dynamic_select_container) select, .frm_form_field.frm_left_container textarea, .frm_form_field.frm_left_container .wp-editor-wrap, .frm_form_field.frm_left_container .frm_opt_container, .frm_form_field.frm_left_container .frm_dropzone, .frm_form_field.frm_left_container .frm-g-recaptcha, .frm_form_field.frm_left_container .g-recaptcha, .frm_form_field.frm_left_container .chosen-container, .frm_form_field.frm_left_container .frm_combo_inputs_container, .frm_form_field.frm_right_container input:not([type=radio]):not([type=checkbox]), .frm_form_field.frm_right_container:not(.frm_dynamic_select_container) select, .frm_form_field.frm_right_container textarea, .frm_form_field.frm_right_container .wp-editor-wrap, .frm_form_field.frm_right_container .frm_opt_container, .frm_form_field.frm_right_container .frm_dropzone, .frm_form_field.frm_right_container .frm-g-recaptcha, .frm_form_field.frm_right_container .g-recaptcha, .frm_form_field.frm_right_container .chosen-container, .frm_form_field.frm_right_container .frm_combo_inputs_container {
+	max-width: 100%;
+}
+
+.frm_form_field.frm_left_container label.frm_primary_label {
+	max-width: 90%;
+}
+
+.frm_form_field {
+	input,
+	select {
+		width: 100%;
+	}
+}
+
+.with_frm_style .frm_form_fields > fieldset {
+	background: rgba( $PK_purple, 0.12 );
+	border-radius: $border_radius;
+}
