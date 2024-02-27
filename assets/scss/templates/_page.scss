@@ -55,3 +55,17 @@ h2.page_title {
 .no-featured-image .page_heading_area {
 	padding-bottom: 2em;
 }
+
+.login_error {
+	background: $PK_coral;
+	padding: 1em;
+	font-size: 80%;
+	color: $black;
+	font-weight: 500;
+}
+
+
+.lost_password {
+	margin-top: 4em;
+	font-size: 80%;
+}

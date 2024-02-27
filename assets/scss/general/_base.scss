@@ -188,9 +188,13 @@ a.wp-block-button__link {
 
 .padding {
 	padding: 4rem;
+
+	&.large {
+		padding: 8rem;
+	}
 }
 
-.centered-text {
+.centered_text {
 	text-align: center;
 }
 

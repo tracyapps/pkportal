@@ -136,3 +136,21 @@ input[aria-invalid="true"] {
 	background: rgba( $PK_purple, 0.12 );
 	border-radius: $border_radius;
 }
+
+
+
+.login_form {
+
+	max-width: 600px;
+	margin: 1em auto;
+
+	input:not([type="checkbox"]) {
+		margin: 5px 0;
+		width: 100%;
+		font-size: 16px;
+		padding: 0.5em;
+		font-family: "Montserrat";
+		border-radius: $border_radius;
+		@include small_shadow;
+	}
+}

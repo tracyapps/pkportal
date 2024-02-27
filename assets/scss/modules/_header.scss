@@ -82,7 +82,38 @@
 	&.smaller .site-logo {
 
 	}
+	.navigations_container {
+		flex: 1;
+		z-index: 9999999;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: space-around;
+	}
+	.user_menu {
+		font-size: 65%;
+		align-self: flex-end;
+		margin: -2em 1em 1em 0;
 
+		ul,
+		li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: inline-block;
+		}
+
+		li {
+			margin-left: 0.5em;
+			padding-left: 0.5em;
+			border-left: 1px solid rgba( $PK_silver, 0.4 );
+
+			&:first-child {
+				border-left: none;
+			}
+		}
+
+	}
 	.main-navigation {
 		text-align: center;
 		position: relative;

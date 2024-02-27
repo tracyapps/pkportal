@@ -1,0 +1,47 @@
+{
+    "name": "navigation-grid",
+    "title": "Navigation Grid",
+    "active": true,
+    "description": "Grid of nav items, with icons",
+    "category": "common",
+    "icon": "dashicons-grid-view",
+    "keywords": [
+        "nav",
+        "navigation",
+        "icon",
+        "link",
+        ""
+    ],
+    "post_types": [
+        "post",
+        "page"
+    ],
+    "mode": "auto",
+    "align": "wide",
+    "align_text": "left",
+    "align_content": "top",
+    "render_template": "assets\/acf-blocks\/navigation-grid\/navigation-grid.php",
+    "render_callback": "",
+    "enqueue_style": "",
+    "enqueue_script": "",
+    "enqueue_assets": "",
+    "supports": {
+        "anchor": true,
+        "align": [
+            "full",
+            "wide",
+            "sidebar"
+        ],
+        "align_text": false,
+        "align_content": "matrix",
+        "full_height": false,
+        "mode": true,
+        "multiple": true,
+        "example": [],
+        "jsx": false
+    },
+    "acfe_autosync": [
+        "json"
+    ],
+    "modified": 1709054057
+}

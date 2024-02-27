@@ -7,33 +7,6 @@
 			<?php start_footer_links(); ?>
 		</nav>
 
-		<section class="footer-widget-area">
-
-			<?php if ( is_active_sidebar( 'footer-widgets-1' ) ) : ?>
-
-				<div class="column">
-					<?php dynamic_sidebar( 'footer-widgets-1' ); ?>
-				</div>
-
-			<?php endif; ?>
-
-			<?php if ( is_active_sidebar( 'footer-widgets-2' ) ) : ?>
-
-				<div class="column">
-					<?php dynamic_sidebar( 'footer-widgets-2' ); ?>
-				</div>
-
-			<?php endif; ?>
-
-			<?php if ( is_active_sidebar( 'footer-widgets-3' ) ) : ?>
-
-				<div class="column">
-					<?php dynamic_sidebar( 'footer-widgets-3' ); ?>
-				</div>
-
-			<?php endif; ?>
-
-		</section>
 
 		<?php
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
@@ -100,6 +73,13 @@
 			in2='SourceGraphic'
 		/>
 	</filter>
+	<defs>
+		<linearGradient id="PK_blue_green__linear_gradient" x1="0.381" y1="0.043" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+			<stop offset="0" stop-color="#0abcef"/>
+			<stop offset="0.227" stop-color="#0abeeb"/>
+			<stop offset="1" stop-color="#0de4a2"/>
+		</linearGradient>
+	</defs>
 </svg>
 <div class="hidden svg-icon-inject hide-this" aria-hidden="true">
 	<?php include 'assets/svg/output/icons.svg'; ?>

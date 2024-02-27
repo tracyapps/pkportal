@@ -259,8 +259,11 @@ a.wp-block-button__link.text_link:active {
 .padding {
   padding: 4rem;
 }
+.padding.large {
+  padding: 8rem;
+}
 
-.centered-text {
+.centered_text {
   text-align: center;
 }
 
@@ -797,6 +800,20 @@ input[aria-invalid=true] {
   border-radius: 5px;
 }
 
+.login_form {
+  max-width: 600px;
+  margin: 1em auto;
+}
+.login_form input:not([type=checkbox]) {
+  margin: 5px 0;
+  width: 100%;
+  font-size: 16px;
+  padding: 0.5em;
+  font-family: "Montserrat";
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.95) 0 2px 5px -1px, rgba(0, 0, 0, 0.73) 0 1px 3px -1px;
+}
+
 .widget_search form.search-form {
   display: flex;
 }
@@ -883,6 +900,34 @@ input[aria-invalid=true] {
   transition: all 250ms ease-in-out;
   fill: #fff;
   position: relative;
+}
+.site-header .navigations_container {
+  flex: 1;
+  z-index: 9999999;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-around;
+}
+.site-header .user_menu {
+  font-size: 65%;
+  align-self: flex-end;
+  margin: -2em 1em 1em 0;
+}
+.site-header .user_menu ul,
+.site-header .user_menu li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+}
+.site-header .user_menu li {
+  margin-left: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px solid rgba(197, 194, 197, 0.4);
+}
+.site-header .user_menu li:first-child {
+  border-left: none;
 }
 .site-header .main-navigation {
   text-align: center;
@@ -1161,6 +1206,19 @@ h2.page_title {
 }
 .no-featured-image .page_heading_area {
   padding-bottom: 2em;
+}
+
+.login_error {
+  background: #f95557;
+  padding: 1em;
+  font-size: 80%;
+  color: #000;
+  font-weight: 500;
+}
+
+.lost_password {
+  margin-top: 4em;
+  font-size: 80%;
 }
 
 .homepage_hero-container {
@@ -1452,6 +1510,41 @@ span.pulled-left {
 .icon-home-dims {
   width: 100px;
   height: 100px;
+}
+
+.icon-icon_components-dims {
+  width: 195.461px;
+  height: 202.787px;
+}
+
+.icon-icon_customerfeedback-dims {
+  width: 197.475px;
+  height: 195.875px;
+}
+
+.icon-icon_feedback-dims {
+  width: 212.048px;
+  height: 220.339px;
+}
+
+.icon-icon_ideas-dims {
+  width: 224.423px;
+  height: 222.374px;
+}
+
+.icon-icon_schedule-dims {
+  width: 183.337px;
+  height: 184.626px;
+}
+
+.icon-icon_tasks-dims {
+  width: 116.956px;
+  height: 178.016px;
+}
+
+.icon-icon_uxprocess-dims {
+  width: 235.283px;
+  height: 243.4px;
 }
 
 .icon-instagram-dims {

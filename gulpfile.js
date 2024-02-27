@@ -14,7 +14,7 @@ const browsersync = require('browser-sync').create();
 const files = {
 	scssPath: 'assets/scss/**/*.scss',
 //	blockStylesPath: ['_assets/scss/blocks/*.scss', '!_assets/scss/blocks/_blocks.scss'],
-	jsPath: 'assets/js/src_scripts/*.js',
+	jsPath: 'assets/js/scripts/*.js',
 	imgPath: 'assets/images/**/*.{png,jpg,gif,svg,webp}',
 	svgPath: 'assets/svg/originals/*.svg',
 	phpPath: '*.php',

@@ -1,9 +1,9 @@
 jQuery(document).ready( function($) {
 
-	var $nav = $('div.main-navigation');
-	var $btn = $('div.main-navigation button');
-	var $vlinks = $('div.main-navigation .links');
-	var $hlinks = $('div.main-navigation .hidden-links');
+	var $nav = $('nav.main-navigation');
+	var $btn = $('nav.main-navigation button');
+	var $vlinks = $('nav.main-navigation .links');
+	var $hlinks = $('nav.main-navigation .hidden-links');
 
 	var numOfItems = 0;
 	var totalSpace = 0;

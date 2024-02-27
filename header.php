@@ -56,10 +56,19 @@
 			<?php endif; ?>
 
 		</div>
-		<div class="main-navigation">
-
-			<?php start_top_nav(); ?>
+		<div class="navigations_container">
+			<nav class="user_menu">
+				<?php wp_nav_menu(
+						array(
+								'menu'		=> 'user-menu',
+						)
+				) ?>
+			</nav>
+			<nav class="main-navigation">
+				<?php start_top_nav(); ?>
+			</nav>
 		</div>
+
 	</div> <!-- /.site-header-content-container -->
 </header> <!-- / .site-header -->
 <div class="site-content">
