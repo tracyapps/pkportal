@@ -26,6 +26,9 @@
 		</div>
 	</header> <!-- end ticket header -->
 	<section class="ticket-content" itemprop="articleBody">
+		<div class="ticket-status">
+			<?php the_terms( get_the_ID(), 'ticket_status' ); ?>
+		</div>
 
 	</section> <!-- end ticket body -->
 	<footer class="ticket-footer">

@@ -109,6 +109,44 @@
             "min": ""
         },
         {
+            "key": "field_65df5894e4e5f",
+            "label": "Status",
+            "name": "status",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "hide_field": "",
+            "hide_label": "",
+            "hide_instructions": "",
+            "hide_required": "",
+            "taxonomy": "ticket_status",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 1,
+            "return_format": "id",
+            "field_type": "radio",
+            "max": "",
+            "allow_null": 0,
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "acfe_settings": "",
+            "acfe_validate": "",
+            "instruction_placement": "",
+            "acfe_permissions": "",
+            "bidirectional": 0,
+            "multiple": 0,
+            "bidirectional_target": [],
+            "min": ""
+        },
+        {
             "key": "field_65831b4e472f8",
             "label": "Detailed Description",
             "name": "detailed_description",
@@ -266,7 +304,13 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "categories",
+        "featured_image",
+        "format",
+        "send-trackbacks",
+        "tags"
+    ],
     "active": true,
     "description": "",
     "show_in_rest": 1,
@@ -278,5 +322,5 @@
     "acfe_permissions": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1709054035
+    "modified": 1709137653
 }

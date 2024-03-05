@@ -2,6 +2,10 @@
 // Theme support options
 require_once( get_template_directory() . '/assets/functions/theme-support.php' );
 
+// Theme and WP functionality mods
+require_once( get_template_directory() . '/assets/functions/theme-mods.php' );
+
+
 // WP Head and other cleanup functions
 require_once( get_template_directory() . '/assets/functions/cleanup.php' );
 
@@ -38,7 +42,7 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
 	// Site options
 	 require_once( get_template_directory() . '/assets/functions/site-options.php' );
 	// ACF blocks (hopefully soon)
-	// require_once( get_template_directory() . '/assets/functions/acf-blocks.php' );
+	 require_once( get_template_directory() . '/assets/functions/acf-blocks.php' );
 }
 
 // Related post function - no need to rely on plugins
@@ -47,11 +51,6 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
 // Adds support for multiple languages
 // require_once( get_template_directory() . '/assets/translation/translation.php' );
 
-// Remove 4.2 Emoji Support
-// require_once(get_template_directory().'/assets/functions/disable-emoji.php');
-
-// Use this as a template for custom post types
-//require_once(get_template_directory().'/assets/functions/custom-post-type.php');
 
 // Adds site styles to the WordPress editor
 require_once(get_template_directory().'/assets/functions/editor-styles.php');

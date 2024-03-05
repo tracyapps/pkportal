@@ -8,8 +8,8 @@ function start_add_block_categories( $categories, $post ) {
 
 		array(
 			array(
-				'slug' => 'sections',
-				'title' => __( 'Page Sections', 'sections' ),
+				'slug' => 'pkblocks',
+				'title' => __( 'PKblocks', 'pkblocks' ),
 			),
 		),
 		$categories
@@ -17,57 +17,28 @@ function start_add_block_categories( $categories, $post ) {
 }
 add_filter( 'block_categories', 'start_add_block_categories', 10, 2);
 
-add_action('acf/init', 'start_register_blocks');
-function start_register_blocks() {
+add_action('acf/init', 'start_initialize_acf_blocks');
+function start_initialize_acf_blocks()
+{
+	// Check function exists.
 
-	// check function exists
-	//if( function_exists('acf_register_block') ) {
-
-		// register a testimonial block
-		acf_register_block(array(
-			'name'              => 'block-custom_title',
-			'title'             => __('Custom Title Block'),
-			'description'       => __('it\'s like a title block, but fancier'),
-			'render_template'   => get_template_directory() . '/parts/block-custom_title.php',
-			'category'          => 'sections',
-			'icon'              => 'format-quote',
-			'mode'              => 'auto',
-			'align'				=> 'full',
-			'keywords'          => array( 'title', 'fancy' ),
-		));
-		acf_register_block(array(
-			'name'              => 'block-hero',
-			'title'             => __('Hero section'),
-			'description'       => __('a big image with some text over it'),
-			'render_template'   => get_template_directory() . '/parts/block-hero.php',
-			'enqueue_style'     => get_template_directory_uri() . '/css/block_styles.css',
-			'category'          => 'sections',
-			'icon'              => 'id',
-			'mode'              => 'auto',
-			'align'				=> 'full',
-			'keywords'          => array( 'grid', 'navigation', 'links' ),
-		));
-		acf_register_block(array(
-			'name'              => 'block-image_text_row',
-			'title'             => __('Image/Text row'),
-			'description'       => __('a section with half image, half text'),
-			'render_template'   => get_template_directory() . '/parts/block-image_text_row.php',
-			'category'          => 'sections',
-			'icon'              => 'forms',
-			'mode'              => 'preview',
-			'align'				=> 'full',
-			'keywords'          => array( 'text', 'image' ),
-		));
-		acf_register_block(array(
-			'name'              => 'block-page_grid',
-			'title'             => __('Page Grid'),
-			'description'       => __('a grid of pages'),
-			'render_template'   => get_template_directory() . '/parts/block-page_grid.php',
-			'category'          => 'sections',
-			'icon'              => 'screenoptions',
-			'mode'              => 'auto',
-			'align'				=> 'full',
-			'keywords'          => array( 'grid', 'navigation', 'links' ),
-		));
-	//}
+	if ( function_exists( 'acf_register_block_type' ) ) {
+		// Register a Guid block block.
+		acf_register_block_type( array(
+			'name'            => 'navigation-grid',
+			'title'           => __( 'Navigation Grid' ),
+			'description'     => __( 'Grid of nav items, with icons' ),
+			'render_template' => get_template_directory() . '/assets/acf-blocks/navigation-grid/navigation-grid.php',
+			'icon'            => file_get_contents( get_template_directory() . '/assets/acf-blocks/_block-assets/navigation-grid-icon.svg' ),
+			'category'        => 'igb',
+			'example'         => array(
+				'attributes' => array(
+					'mode' => 'preview',
+					'data' => array(
+						'is_preview' => true
+					)
+				)
+			)
+		) );
+	}
 }
